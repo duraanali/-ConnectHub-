@@ -1,6 +1,6 @@
 import React from "react";
-import Sidebar from "../components/layout/Sidebar.jsx";
-import Footer from "../components/layout/Footer.jsx";
+import Sidebar from "../Components/layout/Sidebar.jsx";
+import Footer from "../Components/layout/Footer.jsx";
 
 function NotificationsPage() {
   return (

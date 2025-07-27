@@ -8,13 +8,13 @@ import {
   createPost,
 } from "../store/Slices/PostSlices";
 import { Loader2, Image as ImageIcon } from "lucide-react";
-import Sidebar from "../components/layout/Sidebar";
+import Sidebar from "../Components/layout/Sidebar";
 import { useState } from "react";
 import UploadImages from "./UploadImages";
-import CloudinaryUploadWidget from "../components/cloudinaryUploadWidget";
+import CloudinaryUploadWidget from "../Components/cloudinaryUploadWidget";
 import { AdvancedImage, responsive, placeholder } from "@cloudinary/react";
 import { Cloudinary } from "@cloudinary/url-gen";
-import Footer from "../components/layout/Footer";
+import Footer from "../Components/layout/Footer";
 import defaultAvatar from "../assets/defaultimage.png";
 
 function CreatePostPage() {

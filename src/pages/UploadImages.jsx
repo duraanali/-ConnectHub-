@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Cloudinary } from "@cloudinary/url-gen";
 import { AdvancedImage, responsive, placeholder } from "@cloudinary/react";
 
-import CloudinaryUploadWidget from "../components/cloudinaryUploadWidget";
+import CloudinaryUploadWidget from "../Components/cloudinaryUploadWidget";
 
 const UploadImages = () => {
   // Configuration

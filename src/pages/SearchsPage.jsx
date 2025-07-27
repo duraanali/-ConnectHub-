@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import Sidebar from "../components/layout/Sidebar";
+import Sidebar from "../Components/layout/Sidebar";
 
 import axios from "axios";
 import { BASE_URL } from "../store/baseUrl";
 import fallbackImage from "../public/fallback.png";
-import Footer from "../components/layout/Footer";
+import Footer from "../Components/layout/Footer";
 
 function SearchPage() {
   const [users, setUsers] = useState([]);

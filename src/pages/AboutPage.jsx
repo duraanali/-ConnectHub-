@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Sidebar from "../components/layout/Sidebar";
-import Footer from "../components/layout/Footer";
+import Sidebar from "../Components/layout/Sidebar";
+import Footer from "../Components/layout/Footer";
 import defaultPic from "../assets/defaultimage.png";
 
 const initialContributors = [

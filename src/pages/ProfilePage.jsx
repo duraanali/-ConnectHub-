@@ -11,15 +11,15 @@ import {
 
 import { checkAuthStatus } from "../store/Slices/AuthSlices";
 
-import Sidebar from "../components/layout/Sidebar";
+import Sidebar from "../Components/layout/Sidebar";
 
-import Footer from "../components/layout/Footer";
-import PostCard from "../components/posts/Postcard";
-import CloudinaryUploadWidget from "../components/cloudinaryUploadWidget";
-import EditableField from "../components/profile/EditField";
-import FollowButton from "../components/profile/FollowButton";
+import Footer from "../Components/layout/Footer";
+import PostCard from "../Components/posts/Postcard";
+import CloudinaryUploadWidget from "../Components/cloudinaryUploadWidget";
+import EditableField from "../Components/profile/EditField";
+import FollowButton from "../Components/profile/FollowButton";
 import defaultpic from "../assets/defaultimage.png";
-import { formatName } from "../components/utils/formatName";
+import { formatName } from "../Components/utils/formatName";
 
 const ProfilePage = () => {
   const dispatch = useDispatch();

@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import PostCard from "../components/posts/Postcard";
+import PostCard from "../Components/posts/Postcard";
 import defaultAvatar from "../assets/defaultimage.png";
 
 import { fetchPostsWithUsers, fetchComments } from "../store/Slices/PostSlices";
 import { fetchConnections, checkAuthStatus } from "../store/Slices/AuthSlices";
-import Sidebar from "../components/layout/Sidebar";
-import Footer from "../components/layout/Footer";
+import Sidebar from "../Components/layout/Sidebar";
+import Footer from "../Components/layout/Footer";
 
 const HomePage = () => {
   const dispatch = useDispatch();
