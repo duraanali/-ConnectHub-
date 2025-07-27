@@ -1,19 +1,16 @@
-import  { useState } from 'react';
-import { Cloudinary } from '@cloudinary/url-gen';
-import { AdvancedImage, responsive, placeholder } from '@cloudinary/react';
+import { useState } from "react";
+import { Cloudinary } from "@cloudinary/url-gen";
+import { AdvancedImage, responsive, placeholder } from "@cloudinary/react";
 
-import CloudinaryUploadWidget from '../components/cloudinaryUploadWidget';
-
+import CloudinaryUploadWidget from "../components/cloudinaryUploadWidget";
 
 const UploadImages = () => {
   // Configuration
-  const cloudName = 'dbtlgi6vf';
-  const uploadPreset = 's4co4d3l';
-
-   
+  const cloudName = "dbtlgi6vf";
+  const uploadPreset = "s4co4d3l";
 
   // State
-  const [publicId, setPublicId] = useState('');
+  const [publicId, setPublicId] = useState("");
 
   // Cloudinary configuration
   const cld = new Cloudinary({
@@ -39,8 +36,8 @@ const UploadImages = () => {
     // maxImageWidth: 2000,
     // theme: 'purple',
   };
- const imageUrl = publicId ? cld.image(publicId).toURL() : "";
-   console.log("IMAGEURL", imageUrl)
+  const imageUrl = publicId ? cld.image(publicId).toURL() : "";
+  console.log("IMAGEURL", imageUrl);
   return (
     <div className="App">
       <h3>Cloudinary Upload Widget Example</h3>
@@ -71,10 +68,10 @@ const UploadImages = () => {
       {publicId && (
         <div
           className="image-preview"
-          style={{ width: '800px', margin: '20px auto' }}
+          style={{ width: "800px", margin: "20px auto" }}
         >
           <AdvancedImage
-            style={{ maxWidth: '100%' }}
+            style={{ maxWidth: "100%" }}
             cldImg={cld.image(publicId)}
             plugins={[responsive(), placeholder()]}
           />
