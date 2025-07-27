@@ -1,4 +1,4 @@
- //import React, { useState } from "react";
+//import React, { useState } from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import {
@@ -8,17 +8,16 @@ import {
   createPost,
 } from "../store/Slices/PostSlices";
 import { Loader2, Image as ImageIcon } from "lucide-react";
-import Sidebar from "../Components/layout/Sidebar";
+import Sidebar from "../components/layout/Sidebar";
 import { useState } from "react";
 import UploadImages from "./UploadImages";
-import CloudinaryUploadWidget from '../components/cloudinaryUploadWidget';
-import { AdvancedImage, responsive, placeholder } from '@cloudinary/react';
-import { Cloudinary } from '@cloudinary/url-gen';
+import CloudinaryUploadWidget from "../components/cloudinaryUploadWidget";
+import { AdvancedImage, responsive, placeholder } from "@cloudinary/react";
+import { Cloudinary } from "@cloudinary/url-gen";
 import Footer from "../components/layout/Footer";
 import defaultAvatar from "../assets/defaultimage.png";
 
 function CreatePostPage() {
-
   const dispatch = useDispatch();
   const { status, error, createPostForm } = useSelector((state) => state.posts);
   const user = useSelector((state) => state.auth.userInfo);
@@ -27,20 +26,20 @@ function CreatePostPage() {
 
   const charLimit = 280;
 
-  const cloudName = 'doa9xmvsa';
-  const uploadPreset = 'connecthub';
+  const cloudName = "doa9xmvsa";
+  const uploadPreset = "connecthub";
 
-   const [publicId, setPublicId] = useState('')
+  const [publicId, setPublicId] = useState("");
 
- const cld = new Cloudinary({
+  const cld = new Cloudinary({
     cloud: {
       cloudName,
     },
   });
 
-    // Upload Widget Configuration
+  // Upload Widget Configuration
 
- const uwConfig = {
+  const uwConfig = {
     cloudName,
     uploadPreset,
     // Uncomment and modify as needed:
@@ -56,7 +55,6 @@ function CreatePostPage() {
     // maxImageWidth: 2000,
     // theme: 'purple',
   };
-  
 
   // Handle image input change
   const handleImageChange = (e) => {
@@ -65,7 +63,6 @@ function CreatePostPage() {
 
     setImageFile(file);
     setImagePreview(URL.createObjectURL(file));
-    
   };
 
   // Handle form submit
@@ -85,11 +82,9 @@ function CreatePostPage() {
   };
 
   return (
-
     <div className="flex flex-row mt-10 md:ml-48 max-w-7xl ">
-
       <Sidebar />
-      
+
       <div className="max-w-xl mx-auto p-4 w-full">
         <form
           onSubmit={handleSubmit}
@@ -115,7 +110,7 @@ function CreatePostPage() {
               required
             />
           </div>
-      
+
           {Preview && (
             <div className="relative">
               <img
@@ -128,11 +123,22 @@ function CreatePostPage() {
 
           <div className="flex items-center justify-between border-t pt-3">
             <div className="flex items-center gap-4">
-              <CloudinaryUploadWidget uwConfig={uwConfig} setPublicId={setPublicId} />
+              <CloudinaryUploadWidget
+                uwConfig={uwConfig}
+                setPublicId={setPublicId}
+              />
               {publicId && (
                 <span className="text-sm text-green-600 flex items-center gap-1">
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                  <svg
+                    className="w-4 h-4"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                   Image uploaded
                 </span>
@@ -167,10 +173,10 @@ function CreatePostPage() {
       {publicId && (
         <div
           className="image-preview"
-          style={{ width: '800px', margin: '20px auto' }}
+          style={{ width: "800px", margin: "20px auto" }}
         >
           <AdvancedImage
-            style={{ maxWidth: '100%' }}
+            style={{ maxWidth: "100%" }}
             cldImg={cld.image(publicId)}
             plugins={[responsive(), placeholder()]}
           />
